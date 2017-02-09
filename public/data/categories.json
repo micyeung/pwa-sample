@@ -1,0 +1,14 @@
+{  
+   "categories":[  
+      {  
+         "id":1,
+         "desc":"Landmarks",
+         "imageUrl":"/images/landmarks.jpg"
+      },
+      {  
+         "id":2,
+         "desc":"Restaurants",
+         "imageUrl":"/images/restaurants.jpg"
+      }
+   ]
+}
