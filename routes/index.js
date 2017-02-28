@@ -8,7 +8,6 @@ router.use(function(req, res, next) {
   next();
 });
 
-router.use
 
 router.get('/', function(req, res, next) {
   res.render('index', 

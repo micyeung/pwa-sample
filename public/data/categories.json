@@ -9,6 +9,11 @@
          "id":2,
          "desc":"Restaurants",
          "imageUrl":"/images/restaurants.jpg"
+      },
+      {
+          "id":3,
+          "desc":"Theme Parks",
+          "imageUrl":"/images/themeparks.jpg"
       }
    ]
 }

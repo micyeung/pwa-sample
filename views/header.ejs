@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
-    <!--link rel='stylesheet' href='/stylesheets/style.css' /-->
-    <link rel='stylesheet' href='/stylesheets/w3.css' />
-    <link rel='stylesheet' href='/stylesheets/w3-theme-cyan.css' />
+    <link rel='stylesheet' href='/stylesheets/material.min.css' />
+    <link rel='stylesheet' href='/stylesheets/material.deep_purple-orange.min.css' />
+    <style>
+      .mdl-layout__header-row {
+        padding-left: 24px !important;
+      }
+
+      .mdl-layout__content {
+        padding-left: 24px !important;
+      }
+      
+      .demo-card-image.mdl-card {
+        width: 400px;
+        height: 300px;
+        max-width: 100%;
+        margin: 10px;
+        background: url('/images/placeholder.png') center / cover;
+      }
+      
+      .demo-card-image > .mdl-card__actions {
+        height: 52px;
+        padding: 16px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      .demo-card-image__filename {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 500;
+      }
+    </style>
   </head>
   <body>
-    <div class="w3-container w3-padding-4 w3-theme-d3">
-      <div class="w3-right">
-        <%= date %>
-      </div>
-    </div>
-    <div class="w3-navbar w3-theme w3-xlarge w3-padding-4">
-      <div class="w3-left w3-padding-medium">
-        Hong Kong Holiday
-      </div>
-    </div>
+    <!--div class="w3-container w3-padding-4 w3-theme-d3"-->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Hong Kong Holidays</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation. We hide it in small screens. -->
+          <nav class="mdl-navigation mdl-layout--large-screen-only">
+            <a class="mdl-navigation__link" href=""><%= date %></a>
+          </nav>
+        </div>
+      </header>
+
+      <main class="mdl-layout__content">
   
-    <header class="w3-container">
