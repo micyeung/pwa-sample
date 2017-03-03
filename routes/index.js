@@ -1,5 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var swPrecache = require('sw-precache');
+var path = require('path');
+
+
+// Generate sw using the sw-precache config file
+var swPrecacheConfig = require('./../sw-precache-config.js');
+swPrecache.write(path.join(__dirname,
+    '/../public/generated-service-worker.js'), swPrecacheConfig,
+    function(err) {
+  if (err) console.log(err);
+});
 
 /* GET index page. */
 

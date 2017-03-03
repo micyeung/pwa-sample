@@ -1,3 +1,12 @@
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/generated-service-worker.js')
+    .then(function(reg) {
+        console.log("Service worker registration successful " + reg.scope);
+    }).catch(function(err) {
+        console.log("Service worker registration failed with " + err);
+    });
+}
+
 fetch("/data/categories.json").then(function(res) {
     return res.json();
 }).then(function(categoriesJson) {    
