@@ -13,6 +13,8 @@ fetch("/data/categories.json").then(function(res) {
     pwa.processJSON(categoriesJson);
 });
 
+console.log("Changed main JS file 3");
+
 var pwa = {
     processJSON: function(jsonData) {
         //console.log('Updating page with JSON', jsonData);
