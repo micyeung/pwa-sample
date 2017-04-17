@@ -7,14 +7,6 @@ if ('serviceWorker' in navigator) {
     });
 }
 
-fetch("/data/categories.json").then(function(res) {
-    return res.json();
-}).then(function(categoriesJson) {    
-    pwa.processJSON(categoriesJson);
-});
-
-console.log("Changed main JS file 3");
-
 var pwa = {
     processJSON: function(jsonData) {
         //console.log('Updating page with JSON', jsonData);
@@ -44,10 +36,29 @@ var pwa = {
             card.appendChild(cardActions);
             
             card.style.backgroundImage = "url('"+category.imageUrl+"')";
-            categoriesContainer.appendChild(card);
+
+            var anchor = document.createElement("A");
+            anchor.setAttribute("href","/content/"+category.catLink);
+            anchor.appendChild(card);
+
+            categoriesContainer.appendChild(anchor);
 
         }
-    }
-        // categoriesContainer.innerHTML = 
+    },
+    processPOIsJSON: function(jsonData) {
+        var canonical = window.location.toString();
+        var categoriesContainer = document.querySelector("#categories-container");
+        var poisJson = jsonData.pois;
+        var ul = document.createElement("UL");
 
+        for (var i=0; i<poisJson.length; i++) {
+            var poi = poisJson[i];
+            console.log(poi);
+
+            var li = document.createElement("LI");
+            li.innerHTML = poi.desc;
+            ul.appendChild(li);
+        }
+        categoriesContainer.appendChild(ul);       
+    }
 };

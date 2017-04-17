@@ -1,0 +1,15 @@
+<%- include('header') %>
+
+    <% if (cat) { %>
+        <script>
+            var category = JSON.parse('<%- JSON.stringify(cat) %>');
+        </script>
+    <% } %>
+    <script src="/javascripts/getcategory.js"></script>
+
+    <h4> <%= title %> </h4>
+    <div id="categories-container">
+        
+    </div>
+
+<%- include('footer') %>

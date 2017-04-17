@@ -12,13 +12,21 @@ swPrecache.write(path.join(__dirname,
   if (err) console.log(err);
 });
 
-/* GET index page. */
+/* GET all pages */
 
 router.use(function(req, res, next) {
   res.locals.date = getCurDate();
   next();
 });
 
+router.get('/content/:category', function(req, res, next) {
+  var catId = req.params.category;
+  res.render('content', {title: catId, cat:catId});
+});
+
+router.get('/app-shell', function(req, res, next) {
+  res.render('content', {title:'Offline', cat:{}});
+});
 
 router.get('/', function(req, res, next) {
   res.render('index', 

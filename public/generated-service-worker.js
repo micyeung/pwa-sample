@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["/","d394fb2a23fdd2004b67e75ce866b57f"],["/images/landmarks.jpg","8086b45943acc7e852c50a05f357682b"],["/images/placeholder.png","a36832a1e392634b93b1f2e54dc81960"],["/images/restaurants.jpg","9e3027b2e3cdfe5801a1c8a2ff613c74"],["/images/themeparks.jpg","ed36f50d6f5f7c106a1b8a5671d894bc"],["/javascripts/main.js","c91b6505fad07ece02680005ff669141"],["/javascripts/material.min.js","713af0c6ce93dbbce2f00bf0a98d0541"],["/stylesheets/material.deep_purple-orange.min.css","be5c266162cdb252da8675fb56bce046"],["/stylesheets/material.min.css","9ab85b48144d24908b4e455c2afb648c"],["/stylesheets/style.css","aae10ae0aba1f18fa26b4a6c5253b138"],["/stylesheets/w3-theme-cyan.css","6e550bb25782180727fe95eac3f144e0"],["/stylesheets/w3.css","63678ae44742e1fc41b3d376d8ab73f7"]];
+var precacheConfig = [["/","82880b40a9e523faee4e63618b3df6a9"],["/app-shell","3a63eb588cce99c750d772d13a304f8b"],["/images/landmarks.jpg","8086b45943acc7e852c50a05f357682b"],["/images/placeholder.png","a36832a1e392634b93b1f2e54dc81960"],["/images/restaurants.jpg","9e3027b2e3cdfe5801a1c8a2ff613c74"],["/images/themeparks.jpg","ed36f50d6f5f7c106a1b8a5671d894bc"],["/javascripts/getcategories.js","580d642ca706115569b6f79d256e7a77"],["/javascripts/getcategory.js","1a72eb4a34f30997ca4c93e005063406"],["/javascripts/main.js","7a3477ee21c60c2accf4c73480c8555b"],["/javascripts/material.min.js","713af0c6ce93dbbce2f00bf0a98d0541"],["/stylesheets/material.deep_purple-orange.min.css","be5c266162cdb252da8675fb56bce046"],["/stylesheets/material.min.css","9ab85b48144d24908b4e455c2afb648c"],["/stylesheets/style.css","aae10ae0aba1f18fa26b4a6c5253b138"],["/stylesheets/w3-theme-cyan.css","6e550bb25782180727fe95eac3f144e0"],["/stylesheets/w3.css","63678ae44742e1fc41b3d376d8ab73f7"]];
 var cacheName = 'sw-precache-v3--' + (self.registration ? self.registration.scope : '');
 
 
@@ -227,7 +227,7 @@ self.addEventListener('fetch', function(event) {
 
     // If shouldRespond is still false, check to see if this is a navigation
     // request, and if so, whether the URL matches navigateFallbackWhitelist.
-    var navigateFallback = '/';
+    var navigateFallback = '';
     if (!shouldRespond &&
         navigateFallback &&
         (event.request.mode === 'navigate') &&
@@ -283,7 +283,8 @@ self.addEventListener('fetch', function(event) {
 
 // Runtime cache configuration, using the sw-toolbox library.
 
-toolbox.router.get("/data/categories.json", toolbox.fastest, {});
+toolbox.router.get("/data/(.*)json", toolbox.fastest, {});
+toolbox.router.get("/content/(.*)", toolbox.cacheFirst, {});
 
 
 

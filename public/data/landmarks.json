@@ -1,21 +1,18 @@
 {  
-   "categories":[  
+   "pois":[  
       {  
          "id":1,
-         "desc":"Landmarks",
-         "catLink":"landmarks",
+         "desc":"Times Square",
          "imageUrl":"/images/landmarks.jpg"
       },
       {  
          "id":2,
-         "desc":"Restaurants",
-         "catLink":"restaurants",
+         "desc":"The Peak",
          "imageUrl":"/images/restaurants.jpg"
       },
       {
           "id":3,
-          "desc":"Theme Parks",
-          "catLink":"themeparks",
+          "desc":"Victoria Park",
           "imageUrl":"/images/themeparks.jpg"
       }
    ]
